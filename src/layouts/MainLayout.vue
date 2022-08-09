@@ -1,8 +1,10 @@
 <template>
   <div class="app-main-layout">
-    <Navbar />
-    <Sidebar />
-    <main class="app-content">
+    <Navbar @clicks="isOpen = !isOpen" />
+
+    <Sidebar :isOpen="isOpen" />
+
+    <main class="app-content" :class="{ full: !isOpen }">
       <div class="app-page">
         <router-view />
       </div>
@@ -19,5 +21,16 @@
 <script>
 import Navbar from "@/components/app/Navbar.vue";
 import Sidebar from "@/components/app/Sidebar.vue";
-export default { components: { Navbar, Sidebar } };
+export default {
+  name: "main-layout",
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+  components: {
+    Navbar,
+    Sidebar,
+  },
+};
 </script>
