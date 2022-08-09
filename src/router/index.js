@@ -9,8 +9,6 @@ import Planning from '@/views/Planning.vue'
 import Profile from '@/views/Profile.vue'
 import Record from '@/views/Record.vue'
 
-
-
 const routes = [
   {
     path: '/',
